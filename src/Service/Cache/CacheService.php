@@ -1,8 +1,7 @@
 <?php
 
 
-namespace Line9\Sdk\Services\Cache;
-
+namespace Line9\Sdk\Service\Cache;
 
 use Exception;
 use Throwable;
