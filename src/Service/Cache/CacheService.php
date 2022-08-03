@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Services\Cache;
+namespace Line9\Sdk\Services\Cache;
 
 
 use Exception;
