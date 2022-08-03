@@ -17,7 +17,7 @@ abstract class CacheService
 
     private function __construct() {}
 
-    public static function bootstrap(callable $redisGenerator)
+    public static function register(callable $redisGenerator)
     {
         self::$redis = $redisGenerator();
     }

@@ -17,7 +17,7 @@ class Sdk
     {
     }
 
-    public static function bootstrap(string $host, string $ip, string $requestId, callable $logger)
+    public static function register(string $host, string $ip, string $requestId, callable $logger)
     {
         self::$host = $host;
         self::$ip = $ip;
