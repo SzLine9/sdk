@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Services\Cache;
+namespace Services\Cache;
 
 
 use Exception;
