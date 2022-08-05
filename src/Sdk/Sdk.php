@@ -25,12 +25,12 @@ class Sdk
         self::$requestId = $requestId;
     }
 
-    public static function getInstance(): self
+    public static function getInstance(): static
     {
-        if (!self::$instance) {
-            self::$instance = new static();
+        if (!static::$instance) {
+            static::$instance = new static();
         }
-        return self::$instance;
+        return static::$instance;
     }
 
     protected function getUrl(string $path): string {

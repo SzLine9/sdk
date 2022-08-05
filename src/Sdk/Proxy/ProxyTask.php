@@ -1,6 +1,6 @@
 <?php
 
-namespace Line9\Sdk\Proxy;
+namespace Line9\Sdk\Sdk\Proxy;
 
 use Line9\Sdk\Sdk\Sdk;
 
