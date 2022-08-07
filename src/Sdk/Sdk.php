@@ -8,6 +8,7 @@ use GuzzleHttp\Exception\GuzzleException;
 class Sdk
 {
     private static $instance;
+    private static $signKey;
     private static $host;
     private static $ip;
     private static $logger;
@@ -17,15 +18,16 @@ class Sdk
     {
     }
 
-    public static function register(string $host, string $ip, string $requestId, callable $logger)
+    public static function register(string $signKey, string $host, string $ip, string $requestId, callable $logger)
     {
+        self::$signKey = $signKey;
         self::$host = $host;
         self::$ip = $ip;
         self::$logger = $logger;
         self::$requestId = $requestId;
     }
 
-    public static function getInstance(): static
+    public static function getInstance()
     {
         if (!static::$instance) {
             static::$instance = new static();
@@ -48,9 +50,12 @@ class Sdk
     public function request(string $method, string $path, array $params, array $headers): array
     {
         $client = new Client();
+        $time = microtime(true);
         $headers['Host'] = self::$host;
         $headers['Request-Id'] = self::$requestId;
         $headers['Content-Type'] = 'application/json;charset=utf-8';
+        $headers['Request-Time'] = $time;
+        $headers['sign'] = hash_hmac('sha1', $time, self::$signKey);
         $requestUrl = $this->getUrl($path);
         try {
             $response = $client->request($method, $requestUrl, [
