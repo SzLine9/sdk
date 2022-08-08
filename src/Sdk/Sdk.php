@@ -13,10 +13,6 @@ class Sdk
     private static $logger;
     private static $requestId;
 
-    private function __construct()
-    {
-    }
-
     public static function register(string $signKey, string $host, string $ip, string $requestId, callable $logger)
     {
         self::$signKey = $signKey;
