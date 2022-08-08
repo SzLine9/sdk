@@ -7,7 +7,6 @@ use GuzzleHttp\Exception\GuzzleException;
 
 class Sdk
 {
-    private static $instance;
     private static $signKey;
     private static $host;
     private static $ip;
@@ -25,14 +24,6 @@ class Sdk
         self::$ip = $ip;
         self::$logger = $logger;
         self::$requestId = $requestId;
-    }
-
-    public static function getInstance()
-    {
-        if (!static::$instance) {
-            static::$instance = new static();
-        }
-        return static::$instance;
     }
 
     protected function getUrl(string $path): string {
