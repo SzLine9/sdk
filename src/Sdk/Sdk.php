@@ -23,7 +23,7 @@ class Sdk
     }
 
     protected function getUrl(string $path): string {
-        return self::$ip . $path;
+        return self::$ip . '/' . ltrim($path, '/');
     }
 
     /**
