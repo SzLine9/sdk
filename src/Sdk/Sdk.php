@@ -38,7 +38,9 @@ class Sdk
     {
         $client = new Client();
         $time = microtime(true);
-        $headers['Host'] = self::$host;
+        if (self::$host) {
+            $headers['Host'] = self::$host;
+        }
         $headers['Request-Id'] = self::$requestId;
         $headers['Content-Type'] = 'application/json;charset=utf-8';
         $headers['Request-Time'] = $time;
