@@ -2,6 +2,7 @@
 
 namespace Line9\Sdk\Sdk\Proxy;
 
+use Line9\Sdk\Exception\SdkException;
 use Line9\Sdk\Sdk\Sdk;
 
 class ProxyTask extends Sdk
@@ -10,6 +11,7 @@ class ProxyTask extends Sdk
      * 创建普通任务
      * @param array $array
      * @return array
+     * @throws SdkException
      */
     public function createNormalTask(array $array): array
     {
@@ -20,6 +22,7 @@ class ProxyTask extends Sdk
      * 创建简单任务
      * @param array $array
      * @return array
+     * @throws SdkException
      */
     public function createSimpleTask(array $array): array
     {

@@ -4,6 +4,7 @@ namespace  Line9\Sdk\Sdk;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use Line9\Sdk\Exception\SdkException;
 
 class Sdk
 {
@@ -33,6 +34,7 @@ class Sdk
      * @param array $params
      * @param array $headers
      * @return array
+     * @throws SdkException
      */
     protected function request(string $method, string $path, array $params, array $headers): array
     {
@@ -53,20 +55,28 @@ class Sdk
             ]);
             $responseCode = $response->getStatusCode();
             $responseRawContent = $response->getBody()->getContents();
-            if ($responseCode != 200) {
-                (self::$logger)('sdk:request:code!=200(' . $responseCode . ')=>' . $requestUrl);
-                return [];
-            }
             $responseData = json_decode($responseRawContent, true);
+            if ($responseCode != 200) {
+                $message = '商城系统返回非200Code码(' . $responseCode . ')';
+                (self::$logger)('sdk:request:code!=200(' . $responseCode . ')=>' . $requestUrl);
+                if (isset($responseData['msg'])) {
+                    $message = $responseData['msg'];
+                }
+                throw (new SdkException($message))->setRequestParams($params)->setRequestHeaders($headers)->setResponse($responseRawContent);
+            }
             if (!$responseData) {
+                $message = '商城系统返回数据无法识别';
                 (self::$logger)('sdk:request:data is not a JSON' . $responseRawContent);
-                return [];
+                throw (new SdkException($message))->setRequestParams($params)->setRequestHeaders($headers)->setResponse($responseRawContent);
             }
             (self::$logger)('request-shop-api:params:' . json_encode($params) . ';response:' . json_encode($responseData));
             return $responseData['data'];
         } catch (GuzzleException $e) {
             (self::$logger)('sdk:request:exception:' . $e->getMessage());
-            return [];
+            $exception = new SdkException($e->getMessage());
+            $exception->setRequestParams($params);
+            $exception->setRequestHeaders($headers);
+            throw $exception;
         }
     }
 }
