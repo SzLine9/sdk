@@ -34,7 +34,7 @@ class Sdk
      * @param array $headers
      * @return array
      */
-    public function request(string $method, string $path, array $params, array $headers): array
+    protected function request(string $method, string $path, array $params, array $headers): array
     {
         $client = new Client();
         $time = microtime(true);
