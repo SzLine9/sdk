@@ -62,7 +62,8 @@ class Sdk
                 (self::$logger)('sdk:request:data is not a JSON' . $responseRawContent);
                 return [];
             }
-            return $responseData;
+            (self::$logger)('request-shop-api:params:' . json_encode($params) . ';response:' . json_encode($responseData));
+            return $responseData['data'];
         } catch (GuzzleException $e) {
             (self::$logger)('sdk:request:exception:' . $e->getMessage());
             return [];
