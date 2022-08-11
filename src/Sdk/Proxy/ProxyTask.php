@@ -15,7 +15,7 @@ class ProxyTask extends Sdk
      */
     public function createNormalTask(array $array): array
     {
-        return $this->request('post', 'shop-api/service/proxy-task/create-normal-task', $array, []);
+        return $this->request('post', 'shop-api/service/proxy/proxy-task/create-normal-task', $array, []);
     }
 
     /**
@@ -26,6 +26,17 @@ class ProxyTask extends Sdk
      */
     public function createSimpleTask(array $array): array
     {
-        return $this->request('post', 'shop-api/service/proxy-task/create-simple-task', $array, []);
+        return $this->request('post', 'shop-api/service/proxy/proxy-task/create-simple-task', $array, []);
+    }
+
+    /**
+     * 完成任务
+     * @param array $array
+     * @return array
+     * @throws SdkException
+     */
+    public function finishTask(array $array): array
+    {
+        return $this->request('post', 'shop-api/service/proxy/proxy-task/finish-task', $array, []);
     }
 }

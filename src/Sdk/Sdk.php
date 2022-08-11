@@ -50,6 +50,7 @@ class Sdk
         $requestUrl = $this->getUrl($path);
         try {
             $response = $client->request($method, $requestUrl, [
+                'http_errors' => false,
                 'headers' => $headers,
                 'body' => json_encode($params)
             ]);
