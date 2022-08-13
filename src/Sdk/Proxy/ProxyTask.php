@@ -39,4 +39,15 @@ class ProxyTask extends Sdk
     {
         return $this->request('post', 'shop-api/service/proxy/proxy-task/finish-task', $array, []);
     }
+
+    /**
+     * 获取任务列表
+     * @param array $array
+     * @return array
+     * @throws SdkException
+     */
+    public function getTaskList(array $array): array
+    {
+        return $this->request('post', 'shop-api/service/proxy/proxy-task/get-task-list', $array, []);
+    }
 }
