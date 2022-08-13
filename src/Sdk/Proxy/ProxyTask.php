@@ -8,7 +8,7 @@ use Line9\Sdk\Sdk\Sdk;
 class ProxyTask extends Sdk
 {
     /**
-     * 创建普通任务
+     * @description 创建普通任务
      * @param array $array
      * @return array
      * @throws SdkException
@@ -19,7 +19,7 @@ class ProxyTask extends Sdk
     }
 
     /**
-     * 创建简单任务
+     * @description 创建简单任务
      * @param array $array
      * @return array
      * @throws SdkException
@@ -30,7 +30,7 @@ class ProxyTask extends Sdk
     }
 
     /**
-     * 完成任务
+     * @description 完成任务
      * @param array $array
      * @return array
      * @throws SdkException
@@ -41,7 +41,7 @@ class ProxyTask extends Sdk
     }
 
     /**
-     * 获取任务列表
+     * @description 获取任务列表
      * @param array $array
      * @return array
      * @throws SdkException
@@ -49,5 +49,27 @@ class ProxyTask extends Sdk
     public function getTaskList(array $array): array
     {
         return $this->request('post', 'shop-api/service/proxy/proxy-task/get-task-list', $array, []);
+    }
+
+    /**
+     * @description 开启任务
+     * @param array $array
+     * @return array
+     * @throws SdkException
+     */
+    public function open(array $array): array
+    {
+        return $this->request('post', 'shop-api/service/proxy/proxy-task/open', $array, []);
+    }
+
+    /**
+     * @description 删除任务
+     * @param array $array
+     * @return array
+     * @throws SdkException
+     */
+    public function delete(array $array): array
+    {
+        return $this->request('post', 'shop-api/service/proxy/proxy-task/delete', $array, []);
     }
 }
