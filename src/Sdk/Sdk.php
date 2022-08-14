@@ -50,6 +50,8 @@ class Sdk
         $requestUrl = $this->getUrl($path);
         try {
             $response = $client->request($method, $requestUrl, [
+                // 内网下关闭https验证
+                'verify' => false,
                 'http_errors' => false,
                 'headers' => $headers,
                 'body' => json_encode($params)
