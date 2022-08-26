@@ -28,7 +28,7 @@ abstract class CacheService
      */
     public static function getInstance(): self
     {
-        foreach (self::$instance as $key => $instance) {
+        foreach (self::$instance as $instance) {
             if (is_a($instance, static::class)) {
                 return $instance;
             }
@@ -49,7 +49,7 @@ abstract class CacheService
     {
         $encodeData = json_encode($data, JSON_UNESCAPED_UNICODE);
         $time = $this->getCacheTime();
-        if ($time == 0) {
+        if ($time === 0) {
             self::$redis->set($this->getKey($unique), $encodeData);
             return;
         }
@@ -72,6 +72,30 @@ abstract class CacheService
             }
         }
         return [];
+    }
+
+    /**
+     * @description 重新生成缓存
+     * @param string $unique
+     * @return void
+     */
+    public function generate(string $unique): void
+    {
+        $this->autoGenerate($unique);
+    }
+
+    /**
+     * @description 强制获取,如果没有缓存数据将重新生成
+     * @param string $unique
+     * @return array
+     */
+    public function getMust(string $unique): array
+    {
+        $cache = $this->get($unique);
+        if ($cache) {
+            return $cache;
+        }
+        return $this->autoGenerate($unique);
     }
 
     /**
@@ -112,27 +136,34 @@ abstract class CacheService
 
 
     /**
-     * 缓存说明
+     * @description 缓存说明
      * @return string
      */
     abstract protected function doc(): string;
 
     /**
-     * 缓存key
+     * @description 缓存key
      * @param string $unique
      * @return string
      */
     abstract protected function key(string $unique): string;
 
     /**
-     * 缓存最小时间
+     * @description 缓存最小时间
      * @return int
      */
     abstract protected function minTime(): int;
 
     /**
-     * 缓存最大时间
+     * @description 缓存最大时间
      * @return int
      */
     abstract protected function maxTime(): int;
+
+    /**
+     * @description 自动生成缓存
+     * @param string $unique
+     * @return array
+     */
+    abstract protected function autoGenerate(string $unique): array;
 }
