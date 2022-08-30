@@ -75,30 +75,6 @@ abstract class CacheService
     }
 
     /**
-     * @description 重新生成缓存
-     * @param string $unique
-     * @return void
-     */
-    public function generate(string $unique): void
-    {
-        $this->autoGenerate($unique);
-    }
-
-    /**
-     * @description 强制获取,如果没有缓存数据将重新生成
-     * @param string $unique
-     * @return array
-     */
-    public function getMust(string $unique): array
-    {
-        $cache = $this->get($unique);
-        if ($cache) {
-            return $cache;
-        }
-        return $this->autoGenerate($unique);
-    }
-
-    /**
      * @return int
      * @throws Exception
      */
@@ -159,11 +135,4 @@ abstract class CacheService
      * @return int
      */
     abstract protected function maxTime(): int;
-
-    /**
-     * @description 自动生成缓存
-     * @param string $unique
-     * @return array
-     */
-    abstract protected function autoGenerate(string $unique): array;
 }
