@@ -7,6 +7,11 @@ use Line9\Sdk\Sdk\Sdk;
 
 class ProxyTask extends Sdk
 {
+    protected function flag(): string
+    {
+        return 'shop';
+    }
+
     /**
      * @description 创建普通任务
      * @param array $array

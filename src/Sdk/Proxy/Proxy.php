@@ -7,6 +7,10 @@ use Line9\Sdk\Sdk\Sdk;
 
 class Proxy extends Sdk
 {
+    protected function flag(): string
+    {
+        return 'shop';
+    }
     /**
      * @param array $params
      * @return array

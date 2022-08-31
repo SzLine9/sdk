@@ -7,6 +7,11 @@ use Line9\Sdk\Sdk\Sdk;
 
 class ProxyReward extends Sdk
 {
+    protected function flag(): string
+    {
+        return 'shop';
+    }
+
     /**
      * @description 获取代理奖励列表
      * @param array $params
