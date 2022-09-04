@@ -87,7 +87,7 @@ abstract class Sdk
                 (self::$logger)('sdk:request:data is not a JSON' . $responseRawContent);
                 throw (new SdkException($message))->setRequestParams($params)->setRequestHeaders($headers)->setResponse($responseRawContent);
             }
-            if (isset($responseData['code']) && $responseCode['code'] != 0) {
+            if (isset($responseData['code']) && $responseData['code'] != 0) {
                 throw (new SdkException($responseData['msg']))->setRequestParams($params)->setRequestHeaders($headers)->setResponse($responseRawContent);
             }
             (self::$logger)('request-shop-api:params:' . json_encode($params) . ';response:' . json_encode($responseData));
