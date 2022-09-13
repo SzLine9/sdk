@@ -59,7 +59,7 @@ class Goods extends Sdk
      * @return array
      * @throws SdkException
      */
-    public function list (array $params, array $headers = [], array $options = []): array
+    public function list(array $params, array $headers = [], array $options = []): array
     {
         return $this->request('post', 'shop-api/service/goods/list', $params, $headers, $options);
     }
