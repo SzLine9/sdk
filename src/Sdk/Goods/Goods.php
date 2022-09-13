@@ -50,4 +50,17 @@ class Goods extends Sdk
     {
         return $this->request('post', 'shop-api/service/goods/detail', $params, $headers, $options);
     }
+
+    /**
+     * @description 商品的列表
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function list (array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/list', $params, $headers, $options);
+    }
 }
