@@ -22,7 +22,7 @@ class Proxy extends Sdk
     }
 
     /**
-     * @description 商品详情
+     * @description 代理详情
      * @param array $params
      * @return array
      * @throws SdkException
