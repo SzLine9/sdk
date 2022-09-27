@@ -9,7 +9,7 @@ class ProxyAudit extends Sdk
 {
     protected function flag(): string
     {
-        return 'shop-api';
+        return 'shop';
     }
 
     /**
