@@ -25,6 +25,17 @@ class Withdrawal extends Sdk
     }
 
     /**
+     * @description 详情
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function detail(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/finance/withdrawal/detail', $param, []);
+    }
+
+    /**
      * @description 提现审核通过
      * @param array $param
      * @return array
