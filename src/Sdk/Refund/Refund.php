@@ -91,6 +91,17 @@ class Refund extends Sdk
     }
 
     /**
+     * @description 售后商家同意售后（退货退款/退货换货）
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function agreeRefundOfRefundsAndReturnAndExchange(array $params): array
+    {
+        return $this->request('POST', 'shop-api/service/refund/agree-refund-of-refunds-and-return-and-exchange', $params, []);
+    }
+
+    /**
      * @description 售后商家确认收货（退货退款）
      * @param array $params
      * @return array
@@ -99,6 +110,17 @@ class Refund extends Sdk
     public function confirmReceiptGoodsOfRefunds(array $params): array
     {
         return $this->request('POST', 'shop-api/service/refund/confirm-receipt-goods-of-refunds', $params, []);
+    }
+
+    /**
+     * @description 售后商家确认退款（退货退款）
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function confirmAndRefund(array $params): array
+    {
+        return $this->request('POST', 'shop-api/service/refund/confirm-and-refund', $params, []);
     }
 
     /**
