@@ -20,6 +20,6 @@ class MaterialChannel extends Sdk
      */
     public function stockJstCallback(array $params, array $headers = [], array $options = []): array
     {
-        return $this->request('post', 'shop-api/api/message/stock-jst-callback', $params, $headers, $options);
+        return $this->request('post', 'shop-api/api/callback/stock-jst-callback', $params, $headers, $options);
     }
 }
