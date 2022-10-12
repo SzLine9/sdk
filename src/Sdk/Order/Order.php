@@ -10,7 +10,7 @@ class Order extends Sdk
 
     protected function flag(): string
     {
-        return 'order';
+        return 'shop';
     }
 
     /**
