@@ -89,4 +89,15 @@ class Order extends Sdk
     {
         return $this->request('post', 'shop-api/service/order/order-notice/oversold-notice', $param, []);
     }
+
+    /**
+     * @description 商品订单销量
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function orderGoodsSales(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/order-goods-sales', $param, []);
+    }
 }
