@@ -10,7 +10,7 @@ class Order extends Sdk
 
     protected function flag(): string
     {
-        return 'order';
+        return 'shop';
     }
 
     /**
@@ -88,6 +88,17 @@ class Order extends Sdk
     public function orderOversoldNotice(array $param): array
     {
         return $this->request('post', 'shop-api/service/order/order-notice/oversold-notice', $param, []);
+    }
+
+    /**
+     * @description 商品订单销量
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function orderGoodsSales(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/order-goods-sales', $param, []);
     }
 
     /**

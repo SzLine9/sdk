@@ -9,7 +9,7 @@ class ExpressDelivery extends Sdk
 {
     protected function flag(): string
     {
-        return 'express-delivery';
+        return 'shop';
     }
 
     /**
