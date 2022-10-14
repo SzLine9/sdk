@@ -89,4 +89,15 @@ class Order extends Sdk
     {
         return $this->request('post', 'shop-api/service/order/order-notice/oversold-notice', $param, []);
     }
+
+    /**
+     * @description 订单备注更新
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function orderRemarkUpdate(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/update-remark', $param, []);
+    }
 }
