@@ -58,6 +58,18 @@ class Order extends Sdk
     }
 
     /**
+     * @description 更改物流单号——此仅修改物流单号，订单发货需调用expressSend
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function updateExpress(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/update-express', $param, []);
+    }
+
+
+    /**
      * @description 订单收货地址
      * @param array $param
      * @return array
