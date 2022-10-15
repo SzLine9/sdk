@@ -52,9 +52,9 @@ class Order extends Sdk
      * @return array
      * @throws SdkException
      */
-    public function expressSend(array $param): array
+    public function sendExpress(array $param): array
     {
-        return $this->request('post', 'shop-api/service/order/express-send', $param, []);
+        return $this->request('post', 'shop-api/service/order/send-express', $param, []);
     }
 
     /**
