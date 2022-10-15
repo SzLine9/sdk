@@ -155,4 +155,15 @@ class Refund extends Sdk
     {
         return $this->request('POST', 'shop-api/service/refund/refund-exception-order-list', $params, []);
     }
+
+    /**
+     * @description 售后异常订单详情
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function refundExceptionOrderDetail(array $params): array
+    {
+        return $this->request('POST', 'shop-api/service/refund/refund-exception-order-detail', $params, []);
+    }
 }
