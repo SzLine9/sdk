@@ -37,4 +37,17 @@ class ExpressDelivery extends Sdk
     {
         return $this->request('post', 'shop-api/service/express-delivery/detail', $params, $headers, $options);
     }
+
+    /**
+     * @description 查询物流公司列表
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function companyList(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/express-delivery/company/company-list', $params, $headers, $options);
+    }
 }
