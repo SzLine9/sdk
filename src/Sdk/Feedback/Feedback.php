@@ -22,7 +22,7 @@ class Feedback extends Sdk
      */
     public function list(array $param): array
     {
-        return $this->request('post', 'shop-service/service/feedback/list', $param, []);
+        return $this->request('post', 'shop-api/service/feedback/list', $param, []);
     }
 
     /**
@@ -33,7 +33,7 @@ class Feedback extends Sdk
      */
     public function detail(array $param): array
     {
-        return $this->request('post', 'shop-service/service/feedback/detail', $param, []);
+        return $this->request('post', 'shop-api/service/feedback/detail', $param, []);
     }
 
     /**
@@ -44,6 +44,6 @@ class Feedback extends Sdk
      */
     public function accept(array $param): array
     {
-        return $this->request('post', 'shop-service/service/feedback/accept', $param, []);
+        return $this->request('post', 'shop-api/service/feedback/accept', $param, []);
     }
 }
