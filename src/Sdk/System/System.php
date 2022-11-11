@@ -20,8 +20,19 @@ class System extends Sdk
      * @return array
      * @throws SdkException
      */
-    public function setGlobalConfig(array $param): array
+    public function setConfig(array $param): array
     {
         return $this->request('post', 'shop-api/service/system/set-global-config', $param, []);
+    }
+
+    /**
+     * @description 获取全局配置
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function getConfig(array $params): array
+    {
+        return $this->request('post', '/shop-api/service/system/get-global-config', $params, []);
     }
 }
