@@ -146,6 +146,17 @@ class Refund extends Sdk
     }
 
     /**
+     * @description 售后商家寄回换货商品修改（退货换货），不跑状态机
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function sendGoodsOfReturnAndExchangeUpdate(array $params): array
+    {
+        return $this->request('POST', 'shop-api/service/refund/send-goods-of-return-and-exchange-update', $params, []);
+    }
+
+    /**
      * @description 售后异常订单列表
      * @param array $params
      * @return array
