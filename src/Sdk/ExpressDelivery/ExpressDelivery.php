@@ -59,8 +59,8 @@ class ExpressDelivery extends Sdk
      * @return array
      * @throws SdkException
      */
-    public function receiveMessageOfExpressDelivery100(array $params, array $headers = [], array $options = []): array
+    public function receiveMessageOfExpressDelivery100OfBackend(array $params, array $headers = [], array $options = []): array
     {
-        return $this->request('post', 'shop-api/api/callback/receive-message-of-express-delivery-100', $params, $headers, $options);
+        return $this->request('post', 'shop-api/api/callback/receive-message-of-express-delivery-100-of-backend', $params, $headers, $options);
     }
 }
