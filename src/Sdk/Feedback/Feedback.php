@@ -15,7 +15,7 @@ class Feedback extends Sdk
     }
 
     /**
-     * @deprecated 反馈列表
+     * @description 反馈列表
      * @param array $param
      * @return array
      * @throws SdkException
@@ -26,7 +26,7 @@ class Feedback extends Sdk
     }
 
     /**
-     * @deprecated 反馈详情
+     * @description 反馈详情
      * @param array $param
      * @return array
      * @throws SdkException
@@ -37,7 +37,7 @@ class Feedback extends Sdk
     }
 
     /**
-     * @deprecated 反馈处理提交
+     * @description 反馈处理提交
      * @param array $param
      * @return array
      * @throws SdkException
