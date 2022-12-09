@@ -76,4 +76,17 @@ class Goods extends Sdk
     {
         return $this->request('post', 'shop-api/service/goods/batch-loading-and-unloading', $params, $headers, $options);
     }
+
+    /**
+     * @description 商品批量显示/隐藏
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function batchShowAndHide(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/batch-show-and-hide', $params, $headers, $options);
+    }
 }
