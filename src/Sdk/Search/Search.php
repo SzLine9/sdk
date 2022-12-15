@@ -76,4 +76,30 @@ class Search extends Sdk
     {
         return $this->request('post', 'shop-api/service/search/delete', $params, $headers, $options);
     }
+
+    /**
+     * @description 批量修改搜索数据状态
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function batchUpdateStatus(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/search/batch-update-status', $params, $headers, $options);
+    }
+
+    /**
+     * @description 批量移除搜索数据
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function batchDelete(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/search/batch-delete', $params, $headers, $options);
+    }
 }

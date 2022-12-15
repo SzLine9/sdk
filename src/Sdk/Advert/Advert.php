@@ -76,4 +76,30 @@ class Advert extends Sdk
     {
         return $this->request('post', 'shop-api/service/advert/delete', $params, $headers, $options);
     }
+
+    /**
+     * @description 批量修改广告数据状态
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function batchUpdateStatus(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/advert/batch-update-status', $params, $headers, $options);
+    }
+
+    /**
+     * @description 批量移除广告数据
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function batchDelete(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/advert/batch-delete', $params, $headers, $options);
+    }
 }
