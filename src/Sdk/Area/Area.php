@@ -38,4 +38,17 @@ class Area extends Sdk
     {
         return $this->request('post', 'shop-api/service/area/get-area', $params, $headers, $options);
     }
+
+    /**
+     * @description 查询省、市、地区
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function getProvinceCityArea(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/area/get-province-city-area', $params, $headers, $options);
+    }
 }
