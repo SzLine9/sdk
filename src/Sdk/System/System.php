@@ -35,4 +35,48 @@ class System extends Sdk
     {
         return $this->request('post', '/shop-api/service/system/get-global-config', $params, []);
     }
+
+    /**
+     * @description 配置支付保存
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function setPayConfig(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/system/set-pay-global-config', $param, []);
+    }
+
+    /**
+     * @description 获取支付配置
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function getPayConfig(array $params): array
+    {
+        return $this->request('post', '/shop-api/service/system/get-pay-global-config', $params, []);
+    }
+
+    /**
+     * @description 配置支付保存
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function setRefundConfig(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/system/set-refund-global-config', $param, []);
+    }
+
+    /**
+     * @description 获取支付配置
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function getRefundConfig(array $params): array
+    {
+        return $this->request('post', '/shop-api/service/system/get-refund-global-config', $params, []);
+    }
 }
