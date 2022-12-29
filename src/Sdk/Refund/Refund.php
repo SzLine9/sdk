@@ -135,6 +135,17 @@ class Refund extends Sdk
     }
 
     /**
+     * @description 使用第三方仓储(如：聚水潭)下单
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function createThirdOrder(array $params): array
+    {
+        return $this->request('POST', 'shop-api/service/refund/create-third-order', $params, []);
+    }
+
+    /**
      * @description 售后商家寄回换货商品（退货换货）
      * @param array $params
      * @return array
