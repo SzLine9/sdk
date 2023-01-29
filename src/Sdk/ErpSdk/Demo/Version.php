@@ -20,6 +20,6 @@ class Version extends Sdk
      */
     public function getVersion(array $params): array
     {
-        return $this->request('post', 'erp/api/version', $params, []);
+        return $this->request('post', 'erp-api/api/version', $params, []);
     }
 }
