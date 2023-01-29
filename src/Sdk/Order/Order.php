@@ -123,4 +123,15 @@ class Order extends Sdk
     {
         return $this->request('post', 'shop-api/service/order/update-remark', $param, []);
     }
+
+    /**
+     * @description 订单商家备注更新
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function orderSellerRemarkUpdate(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/update-seller-remark', $param, []);
+    }
 }

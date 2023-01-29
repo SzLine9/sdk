@@ -115,4 +115,9 @@ class GoodsComment extends Sdk
     {
         return $this->request('post', 'shop-api/service/comment/goods-comment-not-top', $params, $headers, $options);
     }
+
+    public function goodsCommentOption(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/comment/goods-comment-option', $params, $headers, $options);
+    }
 }
