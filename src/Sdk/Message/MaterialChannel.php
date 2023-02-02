@@ -1,5 +1,5 @@
 <?php
-namespace Line9\Sdk\Sdk\Goods;
+namespace Line9\Sdk\Sdk\Message;
 
 use Line9\Sdk\Exception\SdkException;
 use Line9\Sdk\Sdk\Sdk;
