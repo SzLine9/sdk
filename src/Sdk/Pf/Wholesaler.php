@@ -57,6 +57,17 @@ class Wholesaler extends Sdk
     }
 
     /**
+     * @description 批发商转移
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function move(array $params): array
+    {
+        return $this->request('post', 'shop-api/service/pf/wholesaler/move', $params, []);
+    }
+
+    /**
      * @description 批发商退出
      * @param array $params
      * @return array
