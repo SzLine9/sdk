@@ -13,6 +13,17 @@ class Wholesaler extends Sdk
     }
 
     /**
+     * @description 批发商新增
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function add(array $params): array
+    {
+        return $this->request('post', 'shop-api/service/pf/wholesaler/add', $params, []);
+    }
+
+    /**
      * @description 批发商列表
      * @param array $params
      * @return array
