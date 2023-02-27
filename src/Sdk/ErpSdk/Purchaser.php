@@ -93,4 +93,17 @@ class Purchaser extends Sdk
     {
         return $this->request('post', '/erp-api/service/purchaser/department', $params, $headers, $options);
     }
+
+    /**
+     * @description 根据console userid获取对应采购员信息
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    function getPurchaser(array $params = [], array $headers = [], array $options = []): array
+    {
+        return $this->request('post', '/erp-api/service/purchaser/get_info', $params, $headers, $options);
+    }
 }
