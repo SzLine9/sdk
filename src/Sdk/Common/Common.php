@@ -25,4 +25,15 @@ class Common extends Sdk
     {
         return $this->request('post', 'shop-api/service/common/upload', $params, $headers, $options);
     }
+
+    /**
+     * @description 生成小程序二维码
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function generateShareCode(array $params): array
+    {
+        return $this->request('post', 'shop-api/service/common/generate-share-code', $params, []);
+    }
 }
