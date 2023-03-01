@@ -66,4 +66,15 @@ class InvitedGift extends Sdk
     {
         return $this->request('post', 'shop-api/service/pf/invited-gift/detail', $params, []);
     }
+
+    /**
+     * @description 选择sku列表
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function selectSku(array $params): array
+    {
+        return $this->request('post', 'shop-api/service/pf/invited-gift/select-sku', $params, []);
+    }
 }
