@@ -49,6 +49,7 @@ abstract class Sdk
         $config = self::$clients[$this->flag()];
         if (!$config) {
             throw (new SdkException('[' . $this->flag() . ']client配置不正确'))
+                ->setRequestUrl($path)
                 ->setRequestParams($params)
                 ->setRequestHeaders($headers)
                 ->setResponse('');
@@ -80,21 +81,22 @@ abstract class Sdk
                 if (isset($responseData['msg'])) {
                     $message = $responseData['msg'];
                 }
-                throw (new SdkException($message))->setRequestParams($params)->setRequestHeaders($headers)->setResponse($responseRawContent);
+                throw (new SdkException($message))->setRequestUrl($requestUrl)->setRequestParams($params)->setRequestHeaders($headers)->setResponse($responseRawContent);
             }
             if (!$responseData) {
                 $message = '商城系统返回数据无法识别';
                 (self::$logger)('sdk:request:data is not a JSON' . $responseRawContent);
-                throw (new SdkException($message))->setRequestParams($params)->setRequestHeaders($headers)->setResponse($responseRawContent);
+                throw (new SdkException($message))->setRequestUrl($requestUrl)->setRequestParams($params)->setRequestHeaders($headers)->setResponse($responseRawContent);
             }
             if (isset($responseData['code']) && $responseData['code'] != 0) {
-                throw (new SdkException($responseData['msg']))->setRequestParams($params)->setRequestHeaders($headers)->setResponse($responseRawContent);
+                throw (new SdkException($responseData['msg']))->setRequestUrl($requestUrl)->setRequestParams($params)->setRequestHeaders($headers)->setResponse($responseRawContent);
             }
             (self::$logger)('request-shop-api:params:' . json_encode($params) . ';response:' . json_encode($responseData));
             return $responseData['data'];
         } catch (GuzzleException $e) {
             (self::$logger)('sdk:request:exception:' . $e->getMessage());
             $exception = new SdkException($e->getMessage());
+            $exception->setRequestUrl($requestUrl);
             $exception->setRequestParams($params);
             $exception->setRequestHeaders($headers);
             throw $exception;
