@@ -94,5 +94,20 @@ class Goods extends Sdk
         return $this->request('post', '/erp-api/service/goods/goods_skus', $params, $headers, $options);
     }
 
+    /**
+     * @description 公用 - 获取sku的已择价
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    function getSkuChoosePrice(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request(
+            'post',
+            '/erp-api/service/goods/get_sku_choose_price', $params, $headers, $options);
+    }
+
 
 }
