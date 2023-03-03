@@ -190,6 +190,17 @@ class Refund extends Sdk
     }
 
     /**
+     * @description 售后申请
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function types(array $params): array
+    {
+        return $this->request('POST', 'shop-api/service/refund/types', $params, []);
+    }
+
+    /**
      * @description 售后申请确认单
      * @param array $params
      * @return array
