@@ -54,6 +54,21 @@ class DeliveryForm extends Sdk
         return $this->request('post', '/erp-api/service/delivery_form/delivery_details', $params, $headers, $options);
     }
 
+
+    /**
+     * @description 明细（精简版）
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    function simpleParticular(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', '/erp-api/service/delivery_form/base_delivery_details', $params, $headers, $options);
+    }
+
+
     /**
      * @description 发起退货
      * @param array $params
@@ -65,5 +80,31 @@ class DeliveryForm extends Sdk
     function returnGoods(array $params, array $headers = [], array $options = []): array
     {
         return $this->request('post', '/erp-api/service/delivery_form/return_goods', $params, $headers, $options);
+    }
+
+    /**
+     * @description 作废
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    function scrap(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', '/erp-api/service/delivery_form/scrap', $params, $headers, $options);
+    }
+
+    /**
+     * @description 确认到货
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    function confirmArrivalGoods(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', '/erp-api/service/delivery_form/confirm_arrival_goods', $params, $headers, $options);
     }
 }
