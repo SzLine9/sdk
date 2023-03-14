@@ -68,6 +68,19 @@ class Goods extends Sdk
     }
 
     /**
+     * @description 统计明细
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    function getCountDetail(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', '/erp-api/service/goods/get_count_detail', $params, $headers, $options);
+    }
+
+    /**
      * @description 公用 - 搜索商品
      * @param array $params
      * @param array $headers
