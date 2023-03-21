@@ -68,4 +68,17 @@ class PaymentForm extends Sdk
     {
         return $this->request('post', '/erp-api/service/payment_form/submit', $params, $headers, $options);
     }
+
+    /**
+     * @description 更新付款单
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    function update(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', '/erp-api/service/payment_form/update', $params, $headers, $options);
+    }
 }
