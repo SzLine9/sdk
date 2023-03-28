@@ -55,4 +55,17 @@ class ReturnExpenseForm extends Sdk
     {
         return $this->request('post', '/erp-api/service/return_expense_form/particular', $params, $headers, $options);
     }
+
+    /**
+     * @description 明细
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    function deposit(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', '/erp-api/service/return_expense_form/deposit', $params, $headers, $options);
+    }
 }
