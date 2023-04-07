@@ -92,4 +92,17 @@ class FilingForm extends Sdk
     {
         return $this->request('post', '/erp-api/service/filing_form/send', $params, $headers, $options);
     }
+
+    /**
+     * @description 发单
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    function delete(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', '/erp-api/service/filing_form/delete', $params, $headers, $options);
+    }
 }
