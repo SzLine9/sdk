@@ -1,9 +1,6 @@
 <?php
 
-namespace Line9\Sdk\Sdk\ErpSdk\Demo;
-
-use Line9\Sdk\Exception\SdkException;
-use Line9\Sdk\Sdk\Sdk;
+namespace Line9\Sdk\Sdk\ErpSdk;
 
 class SystemConfig extends Sdk
 {
@@ -37,5 +34,5 @@ class SystemConfig extends Sdk
     {
         return $this->request('post', '/erp-api/service/system/set_config', $params, $headers, $options);
     }
-    
+
 }
