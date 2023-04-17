@@ -2,6 +2,9 @@
 
 namespace Line9\Sdk\Sdk\ErpSdk;
 
+use Line9\Sdk\Exception\SdkException;
+use Line9\Sdk\Sdk\Sdk;
+
 class SystemConfig extends Sdk
 {
     protected function flag(): string
