@@ -79,4 +79,26 @@ class System extends Sdk
     {
         return $this->request('post', '/shop-api/service/system/get-refund-global-config', $params, []);
     }
+
+    /**
+     * @description 提现配置保存
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function setWithdrawalConfig(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/system/set-withdrawal-global-config', $param, []);
+    }
+
+    /**
+     * @description 获取提现配置
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function getWithdrawalConfig(array $params): array
+    {
+        return $this->request('post', '/shop-api/service/system/get-withdrawal-global-config', $params, []);
+    }
 }
