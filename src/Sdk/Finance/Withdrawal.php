@@ -56,4 +56,15 @@ class Withdrawal extends Sdk
     {
         return $this->request('post', 'shop-api/service/finance/withdrawal/reject', $param, []);
     }
+
+    /**
+     * @description 提现统计
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function statistics(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/finance/withdrawal/withdrawal-statistics', $param, []);
+    }
 }
