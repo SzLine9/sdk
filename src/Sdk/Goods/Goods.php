@@ -39,6 +39,19 @@ class Goods extends Sdk
     }
 
     /**
+     * @description 修该商品
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function updateGoodsSku(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/update-part', $params, $headers, $options);
+    }
+
+    /**
      * @description 详情
      * @param array $params
      * @param array $headers
