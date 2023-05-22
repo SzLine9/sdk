@@ -46,6 +46,12 @@ class Order extends Sdk
         return $this->request('post', 'shop-api/service/order/export', $param, []);
     }
 
+    public function exportNew(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/export-new', $param, []);
+    }
+
+
     /**
      * @description 订单发货
      * @param array $param
