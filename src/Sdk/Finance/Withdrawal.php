@@ -67,4 +67,5 @@ class Withdrawal extends Sdk
     {
         return $this->request('post', 'shop-api/service/finance/withdrawal/withdrawal-statistics', $param, []);
     }
+
 }
