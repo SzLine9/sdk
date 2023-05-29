@@ -52,6 +52,17 @@ class Order extends Sdk
     }
 
     /**
+     * @description 订单发货导出
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function exportSend(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/export-send', $param, []);
+    }
+
+    /**
      * @description 订单发货
      * @param array $param
      * @return array
