@@ -150,4 +150,15 @@ class Order extends Sdk
     {
         return $this->request('post', 'shop-api/service/order/update-seller-remark', $param, []);
     }
+
+    /**
+     * @description 订单发货模板、物流公司对照表下载
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function downloadTemplate(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/download-template', $param, []);
+    }
 }
