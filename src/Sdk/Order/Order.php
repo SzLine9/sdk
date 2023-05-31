@@ -74,6 +74,17 @@ class Order extends Sdk
     }
 
     /**
+     * @description 订单发货：基于订单编号
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function sendExpressByOrderSn(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/send-express-by-order-sn', $param, []);
+    }
+
+    /**
      * @description 更改物流单号——此仅修改物流单号，订单发货需调用expressSend
      * @param array $param
      * @return array
