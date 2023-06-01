@@ -95,6 +95,16 @@ class Order extends Sdk
         return $this->request('post', 'shop-api/service/order/update-express', $param, []);
     }
 
+    /**
+     * @description 更改物流单号：基于订单编号——此仅修改物流单号，订单发货需调用expressSend
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function updateExpressByOrderSn(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/update-express-by-order-sn', $param, []);
+    }
 
     /**
      * @description 订单收货地址
