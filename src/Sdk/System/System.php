@@ -101,4 +101,26 @@ class System extends Sdk
     {
         return $this->request('post', '/shop-api/service/system/get-withdrawal-global-config', $params, []);
     }
+
+    /**
+     * 获取奖励配置
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function getUpgradeGlobalConfig(array $params): array
+    {
+        return $this->request('post', '/shop-api/service/system/get-upgrade-global-config', $params, []);
+    }
+
+    /**
+     * 设置奖励配置
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function setUpgradeGlobalConfig(array $params):array
+    {
+        return $this->request('post', '/shop-api/service/system/set-upgrade-global-config', $params, []);
+    }
 }

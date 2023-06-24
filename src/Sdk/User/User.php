@@ -34,4 +34,15 @@ class User extends Sdk
     {
         return $this->request('post', 'shop-api/service/user/get-mini-token', $param, []);
     }
+
+    /**
+     * 非代理用户列表
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function listNotProxy(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/user/list-not-proxy', $param, []);
+    }
 }
