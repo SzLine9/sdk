@@ -45,4 +45,15 @@ class User extends Sdk
     {
         return $this->request('post', 'shop-api/service/user/list-not-proxy', $param, []);
     }
+
+    /**
+     * @description 非代理用户详情
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function detail(array $param)
+    {
+        return $this->request('post', 'shop-api/service/user/detail', $param, []);
+    }
 }
