@@ -52,7 +52,7 @@ class User extends Sdk
      * @return array
      * @throws SdkException
      */
-    public function detail(array $param)
+    public function detail(array $param): array
     {
         return $this->request('post', 'shop-api/service/user/detail', $param, []);
     }
