@@ -41,4 +41,15 @@ class Proxy extends Sdk
     {
         return $this->request('POST', 'shop-api/service/proxy/save', $params, []);
     }
+
+    /**
+     * 获取用户收益详情
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function getProfile(array $params): array
+    {
+        return $this->request('POST', 'shop-api/service/proxy/profile', $params, []);
+    }
 }
