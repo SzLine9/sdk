@@ -52,4 +52,37 @@ class Proxy extends Sdk
     {
         return $this->request('POST', 'shop-api/service/proxy/profile', $params, []);
     }
+
+    /**
+     * @description 代理详情-直属直推下级列表
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function getDirectProxyList(array $params): array
+    {
+        return $this->request('POST', 'shop-api/service/proxy/get-direct-proxy-list', $params, []);
+    }
+
+    /**
+     * @description 代理详情-间推下级代理列表
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function getIndirectProxyList(array $params): array
+    {
+        return $this->request('POST', 'shop-api/service/proxy/get-indirect-proxy-list', $params, []);
+    }
+
+    /**
+     * @description 代理详情-粉丝列表
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function getFansList(array $params): array
+    {
+        return $this->request('POST', 'shop-api/service/proxy/get-fans-list', $params, []);
+    }
 }
