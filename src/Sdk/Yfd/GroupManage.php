@@ -35,4 +35,15 @@ class GroupManage extends Sdk
     {
         return $this->request('post', 'shop-api/service/group_manage/count', $param, []);
     }
+
+    /**
+     * @description 社群统计
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function updateGroupName(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/group_manage/update_group_name', $param, []);
+    }
 }
