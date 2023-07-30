@@ -19,7 +19,7 @@ class GroupManage extends Sdk
      * @return array
      * @throws SdkException
      */
-    public function detail(array $param): array
+    public function list(array $param): array
     {
         return $this->request('post', 'shop-api/service/group_manage/list', $param, []);
     }
