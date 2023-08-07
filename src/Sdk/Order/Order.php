@@ -182,4 +182,26 @@ class Order extends Sdk
     {
         return $this->request('post', 'shop-api/service/order/download-template', $param, []);
     }
+
+    /**
+     * @description 订单虚拟发货
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function sendExpressBySystem(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/send-express-by-system', $param, []);
+    }
+
+    /**
+     * @description 订单虚拟发货更新
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function updateExpressBySystem(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/update-express-by-system', $param, []);
+    }
 }
