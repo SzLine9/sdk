@@ -85,4 +85,15 @@ class Proxy extends Sdk
     {
         return $this->request('POST', 'shop-api/service/proxy/get-fans-list', $params, []);
     }
+
+    /**
+     * @description 升级代理等级
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function upgradeProxy(array $params): array
+    {
+        return $this->request('POST', 'shop-api/service/proxy/upgrade-proxy', $params, []);
+    }
 }
