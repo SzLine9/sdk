@@ -102,4 +102,9 @@ class Goods extends Sdk
     {
         return $this->request('post', 'shop-api/service/goods/batch-show-and-hide', $params, $headers, $options);
     }
+
+    public function getJstSku(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/get-jst-sku', $params, $headers, $options);
+    }
 }
