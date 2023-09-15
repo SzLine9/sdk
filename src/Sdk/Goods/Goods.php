@@ -103,8 +103,42 @@ class Goods extends Sdk
         return $this->request('post', 'shop-api/service/goods/batch-show-and-hide', $params, $headers, $options);
     }
 
+    /**
+     * 获取聚水潭sku信息
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
     public function getJstSku(array $params, array $headers = [], array $options = []): array
     {
         return $this->request('post', 'shop-api/service/goods/get-jst-sku', $params, $headers, $options);
+    }
+
+    /**
+     * 商品置顶
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function top(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/top', $params, $headers, $options);
+    }
+
+    /**
+     * 取消商品置顶
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function cancelTop(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/cancel-top', $params, $headers, $options);
     }
 }
