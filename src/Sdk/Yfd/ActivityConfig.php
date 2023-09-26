@@ -66,4 +66,15 @@ class ActivityConfig extends Sdk
     {
         return $this->request('post', 'shop-api/service/yfd/list', $param, []);
     }
+
+    /**
+     * @description 合集页置顶/取消置顶
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function changeTop(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/yfd/change-top', $param, []);
+    }
 }
