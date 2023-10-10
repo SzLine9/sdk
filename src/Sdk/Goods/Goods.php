@@ -141,4 +141,30 @@ class Goods extends Sdk
     {
         return $this->request('post', 'shop-api/service/goods/cancel-top', $params, $headers, $options);
     }
+
+    /**
+     * @desc 复制商品
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function copy(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/copy-goods', $params, $headers, $options);
+    }
+
+    /**
+     * @desc 导出商品列表
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function export(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/export', $params, $headers, $options);
+    }
 }
