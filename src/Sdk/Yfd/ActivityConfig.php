@@ -77,4 +77,15 @@ class ActivityConfig extends Sdk
     {
         return $this->request('post', 'shop-api/service/yfd/change-top', $param, []);
     }
+
+    /**
+     * @description 上架/下架
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function changeStatus(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/yfd/category/change-status', $param, []);
+    }
 }
