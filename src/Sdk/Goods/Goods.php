@@ -167,4 +167,9 @@ class Goods extends Sdk
     {
         return $this->request('post', 'shop-api/service/goods/export', $params, $headers, $options);
     }
+
+    public function scanCategory(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/scan-category', $params, $headers, $options);
+    }
 }

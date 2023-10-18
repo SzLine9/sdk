@@ -50,4 +50,9 @@ class Category extends Sdk
     {
         return $this->request('post', 'shop-api/service/goods_category/change-status', $params, $headers, $options);
     }
+
+    public function syncByMaterialNo(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods_category/sync-jst-category', $params, $headers, $options);
+    }
 }
