@@ -172,4 +172,9 @@ class Goods extends Sdk
     {
         return $this->request('post', 'shop-api/service/goods/scan-category', $params, $headers, $options);
     }
+
+    public function getOperateLog(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/get-operate-log', $params, $headers, $options);
+    }
 }
