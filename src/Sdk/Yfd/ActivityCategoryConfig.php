@@ -1,11 +1,13 @@
 <?php
 
+
 namespace Line9\Sdk\Sdk\Yfd;
+
 
 use Line9\Sdk\Exception\SdkException;
 use Line9\Sdk\Sdk\Sdk;
 
-class ActivityConfig extends Sdk
+class ActivityCategoryConfig extends Sdk
 {
     protected function flag(): string
     {
@@ -20,7 +22,7 @@ class ActivityConfig extends Sdk
      */
     public function create(array $param): array
     {
-        return $this->request('post', 'shop-api/service/yfd/create', $param, []);
+        return $this->request('post', 'shop-api/service/yfd/category/create', $param, []);
     }
 
     /**
@@ -31,7 +33,7 @@ class ActivityConfig extends Sdk
      */
     public function update(array $param): array
     {
-        return $this->request('post', 'shop-api/service/yfd/update', $param, []);
+        return $this->request('post', 'shop-api/service/yfd/category/update', $param, []);
     }
 
     /**
@@ -42,29 +44,29 @@ class ActivityConfig extends Sdk
      */
     public function detail(array $param): array
     {
-        return $this->request('post', 'shop-api/service/yfd/detail', $param, []);
+        return $this->request('post', 'shop-api/service/yfd/category/detail', $param, []);
     }
 
     /**
-     * @description 合集页详情
+     * @description 合集页删除
      * @param array $param
      * @return array
      * @throws SdkException
      */
     public function delete(array $param): array
     {
-        return $this->request('post', 'shop-api/service/yfd/delete', $param, []);
+        return $this->request('post', 'shop-api/service/yfd/category/delete', $param, []);
     }
 
     /**
-     * @description 合集页详情
+     * @description 合集页列表
      * @param array $param
      * @return array
      * @throws SdkException
      */
     public function list(array $param): array
     {
-        return $this->request('post', 'shop-api/service/yfd/list', $param, []);
+        return $this->request('post', 'shop-api/service/yfd/category/list', $param, []);
     }
 
     /**
@@ -75,7 +77,7 @@ class ActivityConfig extends Sdk
      */
     public function changeTop(array $param): array
     {
-        return $this->request('post', 'shop-api/service/yfd/change-top', $param, []);
+        return $this->request('post', 'shop-api/service/yfd/category/change-top', $param, []);
     }
 
     /**

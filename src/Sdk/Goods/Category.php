@@ -25,4 +25,34 @@ class Category extends Sdk
     {
         return $this->request('post', 'shop-api/service/goods/category/tree', $params, $headers, $options);
     }
+
+    public function list(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods_category/list', $params, $headers, $options);
+    }
+
+    public function add(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods_category/add', $params, $headers, $options);
+    }
+
+    public function edit(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods_category/edit', $params, $headers, $options);
+    }
+
+    public function detail(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods_category/detail', $params, $headers, $options);
+    }
+
+    public function changeStatus(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods_category/change-status', $params, $headers, $options);
+    }
+
+    public function syncByMaterialNo(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods_category/sync-jst-category', $params, $headers, $options);
+    }
 }
