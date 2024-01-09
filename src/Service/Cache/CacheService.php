@@ -15,11 +15,13 @@ abstract class CacheService
 
     private $prefix = 'line9-shop:';
 
-    private function __construct() {}
+    private function __construct()
+    {
+    }
 
     public static function register(callable $redisGenerator)
     {
-        self::$redis = $redisGenerator();
+        self::$redis = $redisGenerator;
     }
 
     /**
@@ -50,28 +52,10 @@ abstract class CacheService
         $encodeData = json_encode($data, JSON_UNESCAPED_UNICODE);
         $time = $this->getCacheTime();
         if ($time === 0) {
-            self::$redis->set($this->getKey($unique), $encodeData);
+            (self::$redis)()->set($this->getKey($unique), $encodeData);
             return;
         }
-        self::$redis->setex($this->getKey($unique), $time, $encodeData);
-    }
-
-    /**
-     * 获取缓存
-     * @param string $unique
-     * @return array
-     */
-    public function get(string $unique): array
-    {
-        $encodeData = self::$redis->get($this->getKey($unique));
-        if ($encodeData) {
-            try {
-                return json_decode($encodeData, true);
-            } catch (Throwable $exception) {
-                return [];
-            }
-        }
-        return [];
+        (self::$redis)()->setex($this->getKey($unique), $time, $encodeData);
     }
 
     /**
@@ -84,6 +68,18 @@ abstract class CacheService
     }
 
     /**
+     * @description 缓存最小时间
+     * @return int
+     */
+    abstract protected function minTime(): int;
+
+    /**
+     * @description 缓存最大时间
+     * @return int
+     */
+    abstract protected function maxTime(): int;
+
+    /**
      * 获取Key
      * @param string $unique
      * @return string
@@ -91,6 +87,31 @@ abstract class CacheService
     public function getKey(string $unique): string
     {
         return $this->prefix . $this->key($unique);
+    }
+
+    /**
+     * @description 缓存key
+     * @param string $unique
+     * @return string
+     */
+    abstract protected function key(string $unique): string;
+
+    /**
+     * 获取缓存
+     * @param string $unique
+     * @return array
+     */
+    public function get(string $unique): array
+    {
+        $encodeData = (self::$redis)()->get($this->getKey($unique));
+        if ($encodeData) {
+            try {
+                return json_decode($encodeData, true);
+            } catch (Throwable $exception) {
+                return [];
+            }
+        }
+        return [];
     }
 
     /**
@@ -107,32 +128,12 @@ abstract class CacheService
                 $keys[] = $this->getKey($item);
             }
         }
-        self::$redis->del($keys);
+        (self::$redis)()->del($keys);
     }
-
 
     /**
      * @description 缓存说明
      * @return string
      */
     abstract protected function doc(): string;
-
-    /**
-     * @description 缓存key
-     * @param string $unique
-     * @return string
-     */
-    abstract protected function key(string $unique): string;
-
-    /**
-     * @description 缓存最小时间
-     * @return int
-     */
-    abstract protected function minTime(): int;
-
-    /**
-     * @description 缓存最大时间
-     * @return int
-     */
-    abstract protected function maxTime(): int;
 }
