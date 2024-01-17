@@ -221,4 +221,15 @@ class Refund extends Sdk
     {
         return $this->request('POST', 'shop-api/service/refund/create', $params, []);
     }
+
+    /**
+     * @description 爱库存售后记录列表
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function ikcList(array $params): array
+    {
+        return $this->request('POST', 'shop-api/service/refund/ikc_list', $params, []);
+    }
 }
