@@ -230,6 +230,6 @@ class Refund extends Sdk
      */
     public function ikcList(array $params): array
     {
-        return $this->request('POST', 'shop-api/service/refund/ikc_list', $params, []);
+        return $this->request('POST', 'shop-api/service/refund/ikc-list', $params, []);
     }
 }
