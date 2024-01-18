@@ -223,7 +223,7 @@ class Refund extends Sdk
     }
 
     /**
-     * @description 爱库存售后记录列表
+     * @description 爱库存售后交互列表
      * @param array $params
      * @return array
      * @throws SdkException
