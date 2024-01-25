@@ -190,4 +190,14 @@ class Goods extends Sdk
     {
         return $this->request('post', 'shop-api/service/goods/get-operate-log', $params, $headers, $options);
     }
+
+    public function spuIdsByProductIds(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/ikc/spuIds-by-productIds', $params, $headers, $options);
+    }
+
+    public function detailBySkuId(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/ikc/detail-by-skuId', $params, $headers, $options);
+    }
 }
