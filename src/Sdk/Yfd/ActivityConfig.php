@@ -88,4 +88,15 @@ class ActivityConfig extends Sdk
     {
         return $this->request('post', 'shop-api/service/yfd/category/change-status', $param, []);
     }
+
+    /**
+     * @description 设置排序
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function changeSort(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/yfd/change-sort', $param, []);
+    }
 }
