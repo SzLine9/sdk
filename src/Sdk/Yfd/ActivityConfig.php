@@ -86,7 +86,7 @@ class ActivityConfig extends Sdk
      */
     public function changeStatus(array $param): array
     {
-        return $this->request('post', 'shop-api/service/yfd/category/change-status', $param, []);
+        return $this->request('post', 'shop-api/service/yfd/change-status', $param, []);
     }
 
     /**
