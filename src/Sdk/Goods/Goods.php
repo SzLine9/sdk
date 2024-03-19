@@ -200,4 +200,17 @@ class Goods extends Sdk
     {
         return $this->request('post', 'shop-api/service/goods/ikc/detail-by-skuId', $params, $headers, $options);
     }
+
+    /**
+     * @description 获取商品sku详情
+     * @param array $params
+     * @param array $headers
+     * @param array $options
+     * @return array
+     * @throws SdkException
+     */
+    public function getSkuDetail(array $params, array $headers = [], array $options = []): array
+    {
+        return $this->request('post', 'shop-api/service/goods/get-goods-sku', $params, $headers, $options);
+    }
 }
