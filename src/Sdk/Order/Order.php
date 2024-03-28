@@ -204,4 +204,15 @@ class Order extends Sdk
     {
         return $this->request('post', 'shop-api/service/order/update-express-by-system', $param, []);
     }
+
+    /**
+     * @description 查询订单优惠详情
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function discountList(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/order/discount/list', $param, []);
+    }
 }
