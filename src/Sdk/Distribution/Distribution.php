@@ -22,8 +22,15 @@ class Distribution extends Sdk
      */
     public function setting(array $params, array $headers): array
     {
-        return $this->request('post', 'shop-api/service/distribution/get-proxy-group', $params, $headers);
+        return $this->request('post', 'shop-api/service/distribution/setting', $params, $headers);
     }
+
+    public function getSetting(array $params, array $headers): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/get-setting', $params, $headers);
+    }
+
+
 
     /**
      * @desc 订单列表
