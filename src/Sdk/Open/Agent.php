@@ -55,4 +55,5 @@ class Agent extends Sdk
     {
         return $this->request('post', 'open/api/agent/resetusername', $param, []);
     }
+
 }
