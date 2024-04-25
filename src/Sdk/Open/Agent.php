@@ -50,6 +50,7 @@ class Agent extends Sdk
      * @param array $param
      * @return array
      * @throws SdkException
+     *
      */
     public function updateUserName(array $param): array
     {
