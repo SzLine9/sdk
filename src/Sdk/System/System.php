@@ -123,4 +123,26 @@ class System extends Sdk
     {
         return $this->request('post', '/shop-api/service/system/set-upgrade-global-config', $params, []);
     }
+
+    /**
+     * @description 提现返利配置保存
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function setDistributionWithdrawalConfig(array $param): array
+    {
+        return $this->request('post', 'shop-api/service/system/set-distribution-withdrawal-global-config', $param, []);
+    }
+
+    /**
+     * @description 获取返利提现配置
+     * @param array $params
+     * @return array
+     * @throws SdkException
+     */
+    public function getDistributionWithdrawalConfig(array $params): array
+    {
+        return $this->request('post', '/shop-api/service/system/get-distribution-withdrawal-global-config', $params, []);
+    }
 }
