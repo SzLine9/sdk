@@ -1,11 +1,11 @@
 <?php
 
-namespace Line9\Sdk\Sdk\Finance;
+namespace Line9\Sdk\Sdk\Distribution;
 
 use Line9\Sdk\Exception\SdkException;
 use Line9\Sdk\Sdk\Sdk;
 
-class DistributionWithdrawal extends Sdk
+class Withdrawal extends Sdk
 {
 
     protected function flag(): string
@@ -21,7 +21,7 @@ class DistributionWithdrawal extends Sdk
      */
     public function list(array $param): array
     {
-        return $this->request('post', 'shop-api/service/finance/distribution/withdrawal/list', $param, []);
+        return $this->request('post', 'shop-api/service/distribution/withdrawal/list', $param, []);
     }
 
     /**
@@ -32,7 +32,7 @@ class DistributionWithdrawal extends Sdk
      */
     public function detail(array $param): array
     {
-        return $this->request('post', 'shop-api/service/finance/distribution/withdrawal/detail', $param, []);
+        return $this->request('post', 'shop-api/service/distribution/withdrawal/detail', $param, []);
     }
 
     /**
@@ -43,7 +43,7 @@ class DistributionWithdrawal extends Sdk
      */
     public function agree(array $param): array
     {
-        return $this->request('post', 'shop-api/service/finance/distribution/withdrawal/agree', $param, []);
+        return $this->request('post', 'shop-api/service/distribution/withdrawal/agree', $param, []);
     }
 
     /**
@@ -54,7 +54,7 @@ class DistributionWithdrawal extends Sdk
      */
     public function reject(array $param): array
     {
-        return $this->request('post', 'shop-api/service/finance/distribution/withdrawal/reject', $param, []);
+        return $this->request('post', 'shop-api/service/distribution/withdrawal/reject', $param, []);
     }
 
     /**
@@ -65,7 +65,7 @@ class DistributionWithdrawal extends Sdk
      */
     public function statistics(array $param): array
     {
-        return $this->request('post', 'shop-api/service/finance/distribution/withdrawal/withdrawal-statistics', $param, []);
+        return $this->request('post', 'shop-api/service/distribution/withdrawal/withdrawal-statistics', $param, []);
     }
 
 }
