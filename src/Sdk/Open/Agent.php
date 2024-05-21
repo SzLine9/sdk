@@ -44,4 +44,16 @@ class Agent extends Sdk
     {
         return $this->request('post', 'open/api/agent/detail', $param, []);
     }
+
+    /**
+     * @description 修改手机号
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     *
+     */
+    public function updateUserName(array $param): array
+    {
+        return $this->request('post', 'open/api/agent/resetusername', $param, []);
+    }
 }
