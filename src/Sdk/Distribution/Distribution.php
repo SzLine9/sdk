@@ -91,4 +91,9 @@ class Distribution extends Sdk
     {
         return $this->request('post', 'shop-api/service/distribution/get-proxy-group', $params, $headers);
     }
+
+    public function orderTrace(array $params, array $headers): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/order-trace', $params, $headers);
+    }
 }
