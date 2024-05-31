@@ -96,4 +96,14 @@ class Distribution extends Sdk
     {
         return $this->request('post', 'shop-api/service/distribution/order-trace', $params, $headers);
     }
+
+    public function robotDetail(array $params, array $headers): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/robot-detail', $params, $headers);
+    }
+
+    public function robotOperation(array $params, array $headers): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/robot-operation', $params, $headers);
+    }
 }
