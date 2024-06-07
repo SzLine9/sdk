@@ -106,4 +106,14 @@ class Distribution extends Sdk
     {
         return $this->request('post', 'shop-api/service/distribution/robot-operation', $params, $headers);
     }
+
+    public function inviteData(array $params, array $headers): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/invite-data', $params, $headers);
+    }
+
+    public function addCommission(array $params, array $headers): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/add-commission', $params, $headers);
+    }
 }
