@@ -116,4 +116,14 @@ class Distribution extends Sdk
     {
         return $this->request('post', 'shop-api/service/distribution/add-commission', $params, $headers);
     }
+
+    public function inviteDataExport(array $params, array $headers): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/invite-data-export', $params, $headers);
+    }
+
+    public function groupInviteList(array $params, array $headers): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/group-invite-list', $params, $headers);
+    }
 }
