@@ -126,4 +126,9 @@ class Distribution extends Sdk
     {
         return $this->request('post', 'shop-api/service/distribution/group-invite-list', $params, $headers);
     }
+
+    public function changeIdent(array $params, array $headers = []): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/change-ident', $params, $headers);
+    }
 }
