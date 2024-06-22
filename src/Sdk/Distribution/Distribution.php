@@ -131,4 +131,9 @@ class Distribution extends Sdk
     {
         return $this->request('post', 'shop-api/service/distribution/change-ident', $params, $headers);
     }
+
+    public function dataPanel(array $params, array $headers = []): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/data-panel', $params, $headers);
+    }
 }
