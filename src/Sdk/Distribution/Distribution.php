@@ -140,4 +140,9 @@ class Distribution extends Sdk
     {
         return $this->request('post', 'shop-api/service/distribution/data-panel', $params, $headers);
     }
+
+    public function transTaobaoNumberId(array $params, array $headers = []): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/trans-taobao-number-id', $params, $headers);
+    }
 }
