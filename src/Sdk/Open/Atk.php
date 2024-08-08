@@ -112,4 +112,15 @@ class Atk extends Sdk
     {
         return $this->request('post', '/open/api/atk/proxy-detail', $param, []);
     }
+
+    /**
+     * @desc 检查机器人是否在线
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function checkOnline(array $param): array
+    {
+        return $this->request('post', '/open/api/atk/check-robot-online', $param, []);
+    }
 }
