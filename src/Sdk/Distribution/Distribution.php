@@ -117,6 +117,15 @@ class Distribution extends Sdk
         return $this->request('post', 'shop-api/service/distribution/add-commission', $params, $headers);
     }
 
+    public function subMoney(array $params, array $headers): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/sub-money', $params, $headers);
+    }
+
+    public function getMoneyLog(array $params, array $headers): array
+    {
+        return $this->request('post', 'shop-api/service/distribution/get-money-log', $params, $headers);
+    }
     public function inviteDataExport(array $params, array $headers): array
     {
         return $this->request('post', 'shop-api/service/distribution/invite-data-export', $params, $headers);
