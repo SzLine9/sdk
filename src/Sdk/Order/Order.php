@@ -215,4 +215,15 @@ class Order extends Sdk
     {
         return $this->request('post', 'shop-api/service/order/discount/list', $param, []);
     }
+
+    /**
+     * @desc 佣金导出
+     * @param array $param
+     * @return array
+     * @throws SdkException
+     */
+    public function exportOrderCommission(array $param): array
+    {
+        return $this->request('post', '/shop-api/service/order/export-order-commission', $param, []);
+    }
 }
